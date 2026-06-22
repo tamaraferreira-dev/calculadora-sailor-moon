@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Mágica Sailor Moon 🌙</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=500;700&family=Plus+Jakarta+Sans:wght=400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col lg:flex-row items-center justify-center p-4 lg:p-8 gap-8">
+
+    <main class="w-full max-w-sm relative">
+        
+        <div class="absolute -top-12 -right-8 w-24 h-24 flutuar z-10 hidden sm:block">
+            <img 
+                id="imagem-cetro"
+                src="cetro.png" 
+                alt="Cetro Sailor" 
+                class="w-full h-full object-contain"
+                onerror="this.src='https://img.icons8.com/color/96/magic-wand.png'"
+            >
+        </div>
+
+        <div class="absolute -bottom-10 -left-12 w-20 h-20 flutuar z-10 hidden sm:block" style="animation-delay: -2s;">
+            <img 
+                id="imagem-luna"
+                src="luna.webp" 
+                alt="Luna Gata" 
+                class="w-full h-full object-contain"
+                onerror="this.src='https://img.icons8.com/color/96/cat.png'"
+            >
+        </div>
+
+            <div class="vidro-magico rounded-[35px] p-6 relative overflow-hidden">
+            
+            <div class="flex justify-center mb-3">
+                <span class="text-3xl text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]">🌙</span>
+            </div>
+            
+            <header class="text-center mb-4">
+                <h1 class="font-magica text-xl font-bold tracking-widest text-[#4c1c24] drop-shadow">PRISMA LUNAR</h1>
+                <p class="text-[10px] tracking-wider uppercase font-semibold text-[#8a4f58]">Calculadora de Transformação</p>
+            </header>
+
+            <div class="visor rounded-2xl p-4 mb-6 text-right min-h-[90px] flex flex-col justify-between">
+                <div id="historico" class="text-xs text-rose-300 font-mono tracking-widest min-h-[16px] overflow-x-auto whitespace-nowrap"></div>
+                <div id="display" class="text-3xl font-mono text-white tracking-wider truncate">0</div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-3.5">
+
+                <button class="btn-magico h-14 rounded-full font-magica font-bold text-lg" onclick="limparVisor()">C</button>
+                <button class="btn-magico h-14 rounded-full font-magica font-bold text-lg" onclick="apagarUltimo()">⌫</button>
+                <button class="btn-magico h-14 rounded-full font-bold text-lg btn-operador" onclick="inserirOperador('%')">%</button>
+                <button class="btn-magico h-14 rounded-full font-bold text-xl btn-operador" onclick="inserirOperador('/')">÷</button>
+
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('7')">7</button>
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('8')">8</button>
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('9')">9</button>
+                <button class="btn-magico h-14 rounded-full font-bold text-xl btn-operador" onclick="inserirOperador('*')">×</button>
+
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('4')">4</button>
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('5')">5</button>
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('6')">6</button>
+                <button class="btn-magico h-14 rounded-full font-bold text-xl btn-operador" onclick="inserirOperador('-')">−</button>
+
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('1')">1</button>
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('2')">2</button>
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('3')">3</button>
+                <button class="btn-magico h-14 rounded-full font-bold text-xl btn-operador" onclick="inserirOperador('+')">+</button>
+
+                <button class="btn-magico h-14 rounded-full text-lg btn-operador" id="btn-magia">✨</button>
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('0')">0</button>
+                <button class="btn-magico h-14 rounded-full font-semibold text-lg" onclick="inserirNumero('.')">,</button>
+                <button class="btn-magico h-14 rounded-full font-bold text-xl btn-igual" onclick="calcularResultado()">=</button>
+            </div>
+            
+            <div class="text-center mt-5">
+                <span class="text-[9px] font-bold text-[#8a4f58] tracking-widest uppercase">✨ Pelo Poder do Prisma Lunar! ✨</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
