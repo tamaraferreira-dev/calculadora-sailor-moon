@@ -2,10 +2,9 @@
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
    background-image: linear-gradient(rgba(43, 16, 85, 0.3), rgba(255, 179, 193, 0.2)), 
-                  url('https://images.unsplash.com/photo-1532767154073-958e69ac8471?auto=format&fit=crop&w=1920&q=85');
+                  url('SailorMoonBackground.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
 }
 
 .font-magica {
