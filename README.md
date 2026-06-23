@@ -10,7 +10,7 @@ Você não precisa baixar nenhum arquivo para testar a calculadora. Ela já est�
 
 👉 Clique aqui para abrir a Calculadora Mágica 🌙
 
-(Não se esqueça de substituir o link acima pelo seu link real do GitHub Pages!)
+https://tamaraferreira-dev.github.io/calculadora-sailor-moon/
 
 🚀 O que eu aprendi a fazer neste projeto?
 
