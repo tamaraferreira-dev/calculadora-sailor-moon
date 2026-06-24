@@ -6,9 +6,11 @@ let operacaoCompleta = false;
 
 const frasesMagicas = [
     "Prisma Lunar! 🌙",
+    "Superar obstáculos faz as garotas mais bonitas, sabia? 🎀",
     "Pelo Poder do Cristal! ✨",
     "Amor e Justiça! 💖",
     "Cristal de Prata! 💎",
+    "Nós todos carregamos estrelas em nossos corações. 🌟",
     "Cetro Espiral do Coração! 🌟",
     "Poder Estelar! ⭐",
     "Doce Coração Rosa! 💕",
