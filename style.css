@@ -49,9 +49,10 @@ body {
 }
 
 .btn-operador {
-    background: linear-gradient(135deg, #ffe494, #ffd166);
-    color: #4c1c24;
-    font-weight: bold;
+background: linear-gradient(135deg, #ffe494, #ffd166);
+color: #4c1c24;
+font-weight: bold;
+font-size: 1.45rem !important;
 }
 
 .btn-operador:hover {
