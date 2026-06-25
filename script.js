@@ -20,6 +20,7 @@ const frasesMagicas = [
 function limparVisor() {
     expressaoAtual = "";
     display.innerText = "0";
+    desativarEfeitoMarquee();
     historico.innerText = "";
     operacaoCompleta = false;
 }
@@ -28,6 +29,7 @@ function apagarUltimo() {
         limparVisor();
         return;
     }
+    desativarEfeitoMarquee();
     expressaoAtual = expressaoAtual.slice(0, -1);
     display.innerText = formatarParaExibicao(expressaoAtual) || "0";
 }
@@ -36,6 +38,7 @@ function inserirNumero(numero) {
         expressaoAtual = "";
         operacaoCompleta = false;
     }
+    desativarEfeitoMarquee();
     if (numero === '.' && expressaoAtual.endsWith('.')) return;
     if (expressaoAtual.length >= 14) return;
 
@@ -49,6 +52,7 @@ function inserirOperador(operador) {
         operacaoCompleta = false;
     }
 
+    desativarEfeitoMarquee();
     const ultimoChar = expressaoAtual.slice(-1);
     if (['+', '-', '*', '/', '%'].includes(ultimoChar)) {
         expressaoAtual = expressaoAtual.slice(0, -1) + operador;
@@ -62,6 +66,7 @@ function calcularResultado() {
     if (expressaoAtual === "") return;
 
     try {
+        desativarEfeitoMarquee();
         historico.innerText = formatarParaExibicao(expressaoAtual) + " =";
 
         let expressaoLimpa = expressaoAtual.replace(/×/g, '*').replace(/÷/g, '/');
@@ -127,9 +132,18 @@ function magiaDasFaiscas(evento, quantidade = 12) {
         }, 800);
     }
 }
+function ativarEfeitoMarquee() {
+    historico.classList.add('marquee-text');
+}
+
+function desativarEfeitoMarquee() {
+    historico.classList.remove('marquee-text');
+}
+
 function ativarBrilhoEspecial(evento) {
     const fraseAleatoria = frasesMagicas[Math.floor(Math.random() * frasesMagicas.length)];
     historico.innerText = fraseAleatoria;
+    ativarEfeitoMarquee();
     magiaDasFaiscas(evento, 12);
 }
 
